@@ -31,6 +31,10 @@ export async function getDashboardData() {
       })
     ]);
 
+    if (modules.length === 0) {
+      throw new Error("Database has no modules yet");
+    }
+
     return {
       source: "database" as const,
       moduleCount: modules.length,
