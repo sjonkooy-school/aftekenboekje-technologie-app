@@ -4,18 +4,39 @@ Deze route gebruikt:
 
 - GitHub voor de code
 - Vercel voor hosting
-- Supabase voor PostgreSQL
+- Neon voor PostgreSQL
 - Toegangscodes in plaats van Microsoft-login
 
-## 1. Supabase database maken
+## 1. Neon database maken
 
-1. Ga naar `https://supabase.com`.
-2. Maak een gratis project.
-3. Open `Project Settings` > `Database`.
-4. Kopieer de connection string voor PostgreSQL.
-5. Gebruik die als `DATABASE_URL`.
+1. Ga naar `https://neon.tech`.
+2. Log in met GitHub of Google.
+3. Kies `New Project`.
+4. Projectnaam:
 
-Let op: gebruik de pooled connection string als Supabase die aanbiedt voor serverless/Vercel.
+```txt
+aftekenboekje-technologie-app
+```
+
+5. Kies een regio dichtbij Nederland, bijvoorbeeld `Europe`.
+6. Maak het project aan.
+7. Open `Connection details`.
+8. Kies bij connection string:
+
+```txt
+Prisma
+```
+
+9. Kopieer de connection string.
+10. Gebruik die als `DATABASE_URL`.
+
+De string lijkt ongeveer hierop:
+
+```env
+DATABASE_URL="postgresql://gebruiker:wachtwoord@ep-naam.eu-central-1.aws.neon.tech/neondb?sslmode=require"
+```
+
+Laat `sslmode=require` erin staan.
 
 ## 2. GitHub repository maken
 
@@ -61,7 +82,7 @@ npx prisma migrate deploy
 npm run db:seed
 ```
 
-Voor Vercel/Supabase is het handig dit eerst vanaf je eigen computer te doen met dezelfde `DATABASE_URL`.
+Voor Vercel/Neon is het handig dit eerst vanaf je eigen computer te doen met dezelfde `DATABASE_URL`.
 
 ## 6. Later Microsoft-login toevoegen
 

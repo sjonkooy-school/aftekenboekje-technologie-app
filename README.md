@@ -89,7 +89,7 @@ ADMIN_ACCESS_CODE="beheer-demo"
 DEMO_LOGIN_BYPASS=false
 ```
 
-Zie [DEPLOYMENT.md](./DEPLOYMENT.md) om de app zelf online te zetten met Vercel en Supabase.
+Zie [DEPLOYMENT.md](./DEPLOYMENT.md) om de app zelf online te zetten met Vercel en Neon.
 
 ## Microsoft Entra ID
 
