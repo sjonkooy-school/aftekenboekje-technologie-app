@@ -1,0 +1,6 @@
+.env
+.env.*
+*.docx
+*.log
+.next
+node_modules
